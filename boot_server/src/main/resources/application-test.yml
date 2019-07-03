@@ -1,0 +1,35 @@
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        type: com.zaxxer.hikari.HikariDataSource
+        hikari:
+            auto-commit: true
+            connection-test-query: SELECT 1
+            connection-timeout: 30000
+            idle-timeout: 30000
+            max-lifetime: 1800000
+            maximum-pool-size: 15
+            minimum-idle: 5
+            pool-name: DatebookHikariCP
+        url: jdbc:mysql://192.168.10.220:3306/zsgl_kpi_test?useSSL=false&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+        username: root
+        password: Wel@come1
+    jpa:
+        database: MYSQL
+        hibernate:
+            ddl-auto: validate
+            naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        show-sql: false
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5Dialect
+#    redis:
+#        host: 127.0.0.1
+#        port: 6379
+#        jedis:
+#            pool:
+#                max-active: 8
+#                max-idle: 8
+#                max-wait: -1
+#                min-idle: 0
+

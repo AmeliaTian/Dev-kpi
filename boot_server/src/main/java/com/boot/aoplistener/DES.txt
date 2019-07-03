@@ -1,0 +1,7 @@
+当前未使用
+-----------------
+使用方法：
+1、在需要监听触发的方法上添加@CusAnnotation(behaviorDes="XXX")注解。其中XXX表示要执行的监听类。
+2、编写监听类实现IEventListener接口，当配置注解的方法执行时，会调用此实现类中的方法执行。
+注意：
+由于基于反射生成类，因此无法在IEventListener通过@Autowired实现注入Bean或Service,可使用 SpringBeanTools.getBean方式获取到service

@@ -1,0 +1,12 @@
+基于事件监听
+----------------------
+使用方法：
+1、编写Event和EventListener类，其中Event类为发布事件类，EventListener为当接收到发布事件后，触发执行的类。
+2、事件发布方法(参照com.boot.module.auth.service.impl.Au04PrivilegeServiceImpl中对资源权限变更的处理)：
+   类中注入applicationContext：
+        @Autowired
+        private ApplicationContext applicationContext;
+   方法中加入以下代码，发布事件：
+        applicationContext.publishEvent(new PrivilegeChangeEvent(this));
+说明：
+    通过事件发布和监听的方法，可在逻辑上对业务进行解耦。

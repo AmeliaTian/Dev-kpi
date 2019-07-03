@@ -1,0 +1,36 @@
+debug: true
+server:
+    port: 8081
+    servlet:
+        context-path: /helloboot
+        session:
+            cookie:
+                path: /
+            tracking-modes: cookie
+    tomcat:
+        uri-encoding: UTF-8
+spring:
+    profiles:
+        #指定当前的活动配置文件：dev开发环境，prod生产环境
+        active: dev
+    servlet:
+        multipart:
+            #上传文件大小设置(单个文件)
+            #max-file-size: 100Mb
+            #上传文件大小设置(所有文件)
+            #max-request-size: 1000Mb
+    http:
+        #中文处理
+        encoding:
+            charset: UTF-8
+            enabled: true
+            force: true
+    messages:
+        encoding: UTF-8
+    thymeleaf:
+        prefix: classpath:/static/
+
+#----------系统其他配置-----------#
+sys-custom:
+    swagger:
+        show-api: true

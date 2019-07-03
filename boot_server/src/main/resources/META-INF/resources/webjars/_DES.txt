@@ -1,0 +1,2 @@
+swagger为生成api说明文档的模块，此部分配置用于调整原始页面显示格式。
+配置后，自动覆盖srpingfox-swagger-ui.jar中的配置。

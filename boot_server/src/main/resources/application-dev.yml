@@ -1,0 +1,49 @@
+spring:
+    datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        type: com.zaxxer.hikari.HikariDataSource
+        hikari:
+            auto-commit: true
+            connection-test-query: SELECT 1
+            #连接超时时间，30秒
+            connection-timeout: 30000
+            idle-timeout: 30000
+            #连接的最长生命周期，30分钟
+            max-lifetime: 1800000
+            maximum-pool-size: 15
+            minimum-idle: 5
+            pool-name: BootHikariCP
+
+        url: jdbc:mysql://localhost:3306/zsgl_kpi?useSSL=false&characterEncoding=utf8&serverTimezone=UTC
+        username: root
+        password: 123456
+        #url: jdbc:mysql://192.168.10.220:3306/zsgl_kpi_test?useSSL=false&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+        #username: root
+        #password: Wel@come1
+        #url: jdbc:mysql://127.0.0.1:3306/zsgl_kpi?useSSL=false&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull
+        #username: root
+        #password: Welcome@1
+    jpa:
+        database: MYSQL
+        hibernate:
+            # Hibernate ddl auto (create, create-drop, update)
+            #ddl-auto:create----每次运行该程序，没有表格会新建表格，表内有数据会清空
+            #ddl-auto:create-drop----每次程序结束的时候会清空表
+            #ddl-auto:update----每次运行程序，没有表格会新建表格，表内有数据不会清空，只会更新
+            #ddl-auto:validate----运行程序会校验数据与数据库的字段类型是否相同，不同会报错
+            ddl-auto: validate
+            naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+        show-sql: false
+        properties:
+            hibernate:
+                dialect: org.hibernate.dialect.MySQL5Dialect
+#    #用于session共享和缓存
+#    redis:
+#        host: 127.0.0.1
+#        port: 6379
+#        jedis:
+#            pool:
+#                max-active: 8
+#                max-idle: 8
+#                max-wait: -1
+#                min-idle: 0
